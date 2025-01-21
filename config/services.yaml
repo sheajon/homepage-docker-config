@@ -1,0 +1,69 @@
+---
+- Network:
+    - Unifi Controller:
+        icon: ubiquiti-unifi.svg
+        href: https://unifi.ui.com
+        description: network
+        widget:
+          type: unifi
+          url: https://localIP:443
+          username: 
+          password:
+          fields: ["uptime", "wan", "lan_users", "wlan_users"]
+    - PiHole1:
+        icon: pi-hole.svg
+        href: "{{HOMEPAGE_VAR_PIHOLE_LOGINURL_1}}"
+        description: Blade
+        widget:
+          type: pihole
+          url: "{{HOMEPAGE_VAR_PIHOLE_APIURL_1}}"
+          key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+    - PiHole2:
+        icon: pi-hole.svg
+        href: "{{HOMEPAGE_VAR_PIHOLE_LOGINURL_2}}"
+        description: Leo
+        widget:
+          type: pihole
+          url: "{{HOMEPAGE_VAR_PIHOLE_APIURL_2}}"
+          key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
+
+- Hypervisor:
+    - Proxmox:
+        icon: proxmox.svg
+        href: "{{HOMEPAGE_VAR_PVE_URL1}}"
+        description: leo
+        widget:
+          type: proxmox
+          url: "{{HOMEPAGE_VAR_PVE_URL1}}"
+          username: "{{HOMEPAGE_VAR_PVE_USER1}}"
+          password: "{{HOMEPAGE_VAR_PVE_API1}}"
+          node: leo
+
+- Containers:
+    - Portainer:
+        icon: portainer.svg
+        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+        description: PVE leo 102 hydra
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+            env: 2
+            key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
+
+- Home Automation:
+    - Home Assistant:
+        icon: home-assistant.svg
+        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+        description: home
+
+- Servers:
+    - Blade:
+        icon: casaos.svg
+        href: "{{HOMEPAGE_VAR_BLADE_URL}}"
+        description: ZimaBlade CasaOS
+
+- Storage:
+    - Synology:
+        icon: synology-dsm.svg
+        href: "{{HOMEPAGE_VAR_SYNOLOGY_DS213_URL}}"
+        description: DS213+
