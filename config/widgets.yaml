@@ -1,0 +1,15 @@
+---
+- unifi_console:
+    url: https://localIP:443
+    username:
+    password:
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: short
