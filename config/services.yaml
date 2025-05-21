@@ -6,28 +6,54 @@
         description: network
         widget:
           type: unifi
-          url: https://localIP:443
-          username: 
-          password:
+          url: https://10.1.0.1:443
+          username: hpmonitor
+          password: Pw4uireado$wt
           fields: ["uptime", "wan", "lan_users", "wlan_users"]
+    - Speedtest:
+        icon: myspeed.svg
+        href: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
+        description: Internet Speed
+        widget:
+          type: speedtest
+          url: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
+          bitratePrecision: 3 # optional, default is 0
+          fields: ["download", "upload"]
     - PiHole1:
         icon: pi-hole.svg
         href: "{{HOMEPAGE_VAR_PIHOLE_LOGINURL_1}}"
-        description: Blade
+        description: leo dns1
         widget:
           type: pihole
           url: "{{HOMEPAGE_VAR_PIHOLE_APIURL_1}}"
           key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+          version: 6
     - PiHole2:
         icon: pi-hole.svg
         href: "{{HOMEPAGE_VAR_PIHOLE_LOGINURL_2}}"
-        description: Leo
+        description: leo dns2
         widget:
           type: pihole
           url: "{{HOMEPAGE_VAR_PIHOLE_APIURL_2}}"
           key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
-
-- Hypervisor:
+          version: 6
+    - PiHole3:
+        icon: pi-hole.svg
+        href: "{{HOMEPAGE_VAR_PIHOLE_LOGINURL_3}}"
+        description: blade KeepAliveD
+        widget:
+          type: pihole
+          url: "{{HOMEPAGE_VAR_PIHOLE_APIURL_3}}"
+          key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_3}}"
+    - Nginx Proxy Manager:
+        icon: nginx-proxy-manager.svg
+        href: "{{HOMEPAGE_VAR_NPM_URL}}"
+        description: Reverse Proxy Manager
+        widget:
+          type: npm
+          url: "{{HOMEPAGE_VAR_NPM_IP}}"
+          username: "{{HOMEPAGE_VAR_NPM_USER}}"
+          password: "{{HOMEPAGE_VAR_NPM_PW}}"
     - Proxmox:
         icon: proxmox.svg
         href: "{{HOMEPAGE_VAR_PVE_URL1}}"
@@ -38,32 +64,60 @@
           username: "{{HOMEPAGE_VAR_PVE_USER1}}"
           password: "{{HOMEPAGE_VAR_PVE_API1}}"
           node: leo
-
-- Containers:
-    - Portainer:
+    - Portainer1:
         icon: portainer.svg
-        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+        href: "{{HOMEPAGE_VAR_PORTAINER1_URL}}"
         description: PVE leo 102 hydra
         widget:
             type: portainer
-            url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+            url: "{{HOMEPAGE_VAR_PORTAINER1_IP}}"
             env: 2
-            key: "{{HOMEPAGE_VAR_PORTAINER_KEY}}"
-
-- Home Automation:
-    - Home Assistant:
-        icon: home-assistant.svg
-        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-        description: home
-
-- Servers:
-    - Blade:
-        icon: casaos.svg
-        href: "{{HOMEPAGE_VAR_BLADE_URL}}"
-        description: ZimaBlade CasaOS
-
-- Storage:
+            key: "{{HOMEPAGE_VAR_PORTAINER1_KEY}}"
+    - Portainer2:
+        icon: portainer.svg
+        href: "{{HOMEPAGE_VAR_PORTAINER2_URL}}"
+        description: PVE leo 104 spectra
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PORTAINER1_IP}}"
+            env: 3
+            key: "{{HOMEPAGE_VAR_PORTAINER1_KEY}}"
+    - Uptime Kuma:
+        icon: uptime-kuma.svg
+        href: "{{HOMEPAGE_VAR_KUMA_URL}}"
+        description: Network Services
+        widget:
+            type: uptimekuma
+            url: "{{HOMEPAGE_VAR_KUMA_URL}}"
+            slug: networkservices
+            fields: ["up", "down", "uptime", "incident"]
     - Synology:
         icon: synology-dsm.svg
         href: "{{HOMEPAGE_VAR_SYNOLOGY_DS213_URL}}"
         description: DS213+
+        widget:
+            type: diskstation
+            url: "{{HOMEPAGE_VAR_SYNOLOGY_DS213_URL}}"
+            username: "{{HOMEPAGE_VAR_SYNOLOGY_DS213_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_SYNOLOGY_DS213_PW}}"
+            volume: volume_1 # optional
+    - Start9:
+        icon: bitcoin.svg
+        href: "{{HOMEPAGE_VAR_START9_URL}}"
+        description: Bitcoin Node
+    - Network UPS Tools:
+        icon: network-ups-tools.svg
+        href: "{{HOMEPAGE_VAR_NUT_URL}}"
+        description: Battary Backups
+    - Home Assistant:
+        icon: home-assistant.svg
+        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+        description: home
+    - Kasm:
+        icon: kasm.svg
+        href: "{{HOMEPAGE_VAR_KASM_URL}}"
+        description: Kasm Virtual Invironment
+    - Actual Budget:
+        icon: actual-budget.svg
+        href: "{{HOMEPAGE_VAR_BUDGET_URL}}"
+        description:
