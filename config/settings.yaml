@@ -2,11 +2,11 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/settings/
 
-title: Homepage
+title: Taylor House Homepage
 
 background:
-  image: https://images.unsplash.com/photo-1672288072591-619afe830096?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
-      #  https://cdnb.artstation.com/p/assets/images/images/006/897/659/large/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg
+  image: https://images.unsplash.com/photo-1672288072591-619afe830096?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MH>
+#  https://cdnb.artstation.com/p/assets/images/images/006/897/659/large/mikael-gustafsson-wallpaper-mika>
   blur: sm # sm, md, xl... see https://tailwindcss.com/docs/backdrop-blur
   saturate: 100 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
   brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
@@ -23,29 +23,14 @@ layout:
     #useEqualHeights: true
     header: true
     style: row
-    columns: 3
-  Hypervisor:
+    columns: 5
+  Services:
     #useEqualHeights: true
-    header: true
+    header: false
     style: row
-    columns: 3
-  Containers:
-    #useEqualHeights: true
-    header: true
-    style: row
-    columns: 3
-  Storage:
-    #useEqualHeights: true
-    header: true
-    style: row
-    columns: 3
-  Servers:
-    #useEqualHeights: true
-    header: true
-    style: row
-    columns: 3
+    columns: 5
   Home Automation:
     #useEqualHeights: true
-    header: true
+    header: false
     style: row
-    columns: 3
+    columns: 2
